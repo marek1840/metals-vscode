@@ -112,6 +112,11 @@
         "command": "metals.doctor-run",
         "category": "Metals",
         "title": "Run doctor"
+      },
+      {
+        "command": "metals.task.cancel",
+        "category": "Metals",
+        "title": "Cancel task"
       }
     ],
     "menus": {
@@ -143,6 +148,9 @@
         {
           "command": "metals.doctor-run",
           "when": "editorLangId == scala"
+        },
+        {
+          "command": "metals.task.cancel"
         }
       ]
     }
@@ -164,6 +172,7 @@
     "@types/shell-quote": "^1.6.1",
     "github-changes": "^1.1.2",
     "typescript": "^3.2.2",
+    "vscode": "^1.1.21",
     "vsce": "^1.54.0"
   },
   "dependencies": {
@@ -171,7 +180,6 @@
     "promisify-child-process": "3.1.0",
     "semver": "^5.6.0",
     "shell-quote": "^1.6.1",
-    "vscode": "^1.1.21",
     "vscode-languageclient": "^5.1.0"
   },
   "extensionDependencies": [

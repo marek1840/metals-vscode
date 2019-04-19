@@ -41,6 +41,7 @@ import * as fs from "fs";
 import * as semver from "semver";
 import { getJavaHome } from "./getJavaHome";
 import { getJavaOptions } from "./getJavaOptions";
+import { stopTask } from "./cancel-command";
 
 const outputChannel = window.createOutputChannel("Metals");
 const openSettingsAction = "Open settings";
@@ -277,6 +278,8 @@ function launchMetals(
         client.sendRequest(ExecuteCommandRequest.type, { command: command })
       );
     });
+
+    registerCommand("metals.task.cancel", stopTask);
 
     let channelOpen = false;
     const clientCommands: {
